@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
-import 'navbar.dart';
+import 'package:food_app/screens/basket_screen.dart';
+import 'package:food_app/screens/profile_screen.dart';
+import 'package:food_app/screens/root_screen.dart';
+import 'screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,32 +17,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const MainPage(),
+        '/home': (context) => const HomePage(),
+        '/profile': (context) => const ProfileScreen(),
+        '/basket': (context) => const BasketScreen(),
       },
       initialRoute: '/',
-    );
-  }
-}
-
-class MainPage extends StatelessWidget {
-  const MainPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Test AppBar',
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-        centerTitle: true,
-        surfaceTintColor: Colors.yellow,
-      ),
-      body: const Center(
-        child: HomePage(),
-      ),
-      bottomNavigationBar: BottomNavbar(),
     );
   }
 }
